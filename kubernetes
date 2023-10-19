@@ -1,0 +1,82 @@
+https://kubernetes.io/docs/concepts/overview/
+
+K8s - is an open source orchestration tool developed by Google.
+
+k8s components:
+pod: smallest unit k8s.usually 1 application per pod.Each pod has its own IP address.
+
+service ingress 
+
+external configuration : configMap secrets 
+volumes deployment statfulsets
+
+Kubernetes is more than just a container orchestrator,
+ -we can run on our own cloud
+ -migrate from one cloud to other cloud
+ -load balancing
+ -access logs and service discovery
+ -access secrets	
+ 
+ kubernetes cluster
+ 
+ kubectl : is kubernetes command line tool. it communicates with control plane and control plane in turn manages worker nodes (basically servers where the microservices are running). 
+ 
+ two ways : 1 declarative way (write yaml files )
+            2 interactive way (telling clusters specific commands)
+            
+ Pod : scheduling unit in kuberentes
+ 
+ 
+ steps in k8s:
+ 1 create microservice
+ 2 containerize it
+ 3 put every container in its pod
+ 4 deploy these pods to controller
+ 
+ 
+ control plane
+  API server: communication happens through API server. It exposes restful api (over https it gives yaml files which contains things to create pod definition).yaml files are also known as k8s   		 manifestation files.
+  
+etcd: it is a database.stores information about the cluster
+
+controller managers : controllers are managed by controller manager. it has 4 functions:   
+ ds - desired state
+ cs - current state  
+ differences
+ make the changes
+ scheduler
+
+Architecture of kubernetes:
+
+kubelet : it is on every worker node. when a node is creates and attached to the worker plane , kubelet is installed 
+kub-proxy : it is responsible for networking. if controller wants to communicate with outside network it uses kub-proxy.It makes sure that every worker node gets IP address.
+
+kubectl and minikube commands:
+
+minikube version
+	minikube start --driver=virtualbox
+minikube status
+kubectl get pods
+minikube dashboard
+minikube docker-env
+docker container ls
+docker container ls
+minikube ssh
+kubectl get pods
+kubectl config
+kubectl config view
+kubectl config current-context
+kubectl get all
+kubectl delete pod pod_name
+kubectl get deployments
+kubectl delete deployments deployment_name
+
+
+
+
+
+
+
+
+
+            
